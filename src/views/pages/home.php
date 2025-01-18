@@ -7,8 +7,14 @@
             <div class="column pr-5">
                 
                 
-            <?= $render('feed-editor');?>
-            <?= $render('feed-item');?>
+            <?= $render('feed-editor', ['user' => $loggedUser]);?>
+
+            <?php foreach($feed as $feedItem):?>
+                <?= $render('feed-item', [
+                    'data' => $feedItem
+                ]);?>
+            <?php endforeach; ?>
+
 
 
             </div>
